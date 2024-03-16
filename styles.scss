@@ -74,6 +74,10 @@ img{
     position: absolute;
 }
 
+.mauto{
+    margin: auto;
+}
+
 :root{
     --text: #111111;
     --text-80: #11111180;
@@ -157,6 +161,7 @@ header{
     left: 0;
     width: 100%;
     background: var(--bckg);
+    z-index: 150;
 }
 
 .header-scrolled{
@@ -341,7 +346,7 @@ header button{
 .opac07{
     opacity: .5;
     margin-bottom: 50px;
-    font-size: 30px;
+    font-size: 24px;
     font-weight: 400;
 }
 
@@ -371,7 +376,7 @@ header button{
 
 
 //GALLERY
-#gallery-home{
+.linear{
     background: linear-gradient(var(--text-08),var(--text-00));
     border-radius: var(--border-regular);
 }
@@ -387,6 +392,7 @@ header button{
     grid-template-areas: "top-left . top-right"
                             "middle-left middle middle-right" 
                             "bottom-left . bottom-right";
+    margin-bottom: 50px;
 }
 
 
@@ -442,6 +448,107 @@ header button{
     transform: translateX(-60%) scale(0.7);
 }
 
+
+//TESTIMONIES
+
+.testimonies-carousel{
+    width: 100%;
+    height: 900px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.testimonies-bg{
+    position: absolute;
+    width: 100%;
+    top: 0;
+}
+.testimonies-visible{
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    height: 500px;
+    z-index: 5;
+}
+.testimony-box{
+    width: 70%;
+    margin: 0 auto;
+    border-radius: var(--border-regular);
+    height: 350px;
+    box-shadow: var(--reg-shadow);
+    padding: 80px 100px 20px;
+}
+.testimony-box::before,
+.testimony-box::after{
+    display: block;
+    position: absolute;
+    content: url(/assets/icons/quotes.svg);
+}
+.testimony-box::before{
+    top: 0;
+    left: 0;
+    transform: translate(20px,20px);
+}
+
+.testimony-box::after{
+    display: block;
+    position: absolute;
+    transform: translate(-20px, -20px) rotateX(180deg) rotateY(180deg);
+    bottom: 0;
+    right: 0;
+}
+
+
+.testimony-box-customer-pic{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+
+.testimonies-container{
+    margin-bottom: 20px;
+}
+
+.testimony-box-customer-container{
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(-20px,-40px);
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+    align-items: flex-end;
+}
+
+.testimony-box-title{
+    font-size: 24px;
+    font-weight: 800;
+    margin-bottom: 30px;
+}
+
+.testimony-box-customer-desc{
+    opacity: .5;
+    font-size: 13px;
+}
+
+.testimonies-carousel-controls{
+    width: fit-content;
+    margin: 0 auto;
+}
+.testimonies-carousel-control{
+    width: fit-content;
+    width: 10px;
+    height: 10px;
+    background: var(--primary);
+    margin: 0 5px;
+    opacity: .5;
+    border-radius: 50%;
+}
+.testimonies-carousel-control.active{
+    opacity: 1;
+}
 
 // FOOTER
 
