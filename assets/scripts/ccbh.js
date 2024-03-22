@@ -10,11 +10,13 @@ function toggleMenu(){
         setTimeout(()=>{
             document.querySelector("#mobile-nav").classList.remove('slideout')
         },300)
+        document.body.classList.add('locked')
     }
     else{
         document.querySelector("#mobile-nav").classList.add('slideout')
         setTimeout(()=>{
             document.querySelector("#mobile-full-nav").classList.add('dn')
+            document.body.classList.remove('locked');
         },300)
 
     }
