@@ -273,8 +273,8 @@ header button{
     margin-top: 50px;
     height: 80vh;
     border-radius: var(--border-regular);
-    background: linear-gradient(#00000080, #00000080), no-repeat url(/assets/images/banner.jpg);
-    background: linear-gradient(var(--text-80), var(--text-80)), no-repeat url(/assets/images/banner.jpg);
+    background: linear-gradient(#00000080, #00000080), no-repeat url(./assets/images/banner.jpg);
+    background: linear-gradient(var(--text-80), var(--text-80)), no-repeat url(./assets/images/banner.jpg);
     background-position: center;
     background-size: cover;
     display: flex;
@@ -570,7 +570,7 @@ header button{
 .testimony-box::after{
     display: block;
     position: absolute;
-    content: url(/assets/icons/quotes.svg);
+    content: url(./assets/icons/quotes.svg);
 }
 .testimony-box::before{
     top: 0;
@@ -657,7 +657,7 @@ header button{
     position: relative;
 }
 #infos h2::before{
-    content: url(/assets/icons/infos.svg);
+    content: url(./assets/icons/infos.svg);
     top: 50%;
     left: 0;
     position: absolute;
