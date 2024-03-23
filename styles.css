@@ -102,10 +102,12 @@ img {
   --border-middle: 8px;
   --border-regular: 10px;
   --border-large: 20px;
+  --mulish: "Mulish", sans-serif;
+  --museo: "MuseoModerno", sans-serif;
 }
 
 h1, h2 {
-  font-family: "MuseoModerno", sans-serif;
+  font-family: var(--museo);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -117,7 +119,7 @@ h2 {
 }
 
 body {
-  font-family: "Mulish", sans-serif;
+  font-family: var(--mulish);
   padding: 0 20px 20px;
 }
 
@@ -184,6 +186,13 @@ body {
   border-radius: var(--border-small);
   font-weight: 700;
   font-size: 14px;
+}
+
+.conversion-link {
+  color: var(--primary);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  font-weight: 700;
 }
 
 section {
@@ -280,14 +289,9 @@ header button {
   padding: 0;
 }
 
-#banner {
+.page-banner {
   margin-top: 50px;
-  height: 80vh;
   border-radius: var(--border-regular);
-  background: linear-gradient(rgba(0, 0, 0, 0.5019607843), rgba(0, 0, 0, 0.5019607843)), no-repeat url(./assets/images/banner.jpg);
-  background: linear-gradient(var(--text-80), var(--text-80)), no-repeat url(./assets/images/banner.jpg);
-  background-position: center;
-  background-size: cover;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -295,10 +299,38 @@ header button {
   padding: 20px;
 }
 
-#banner h2 {
+#home-banner {
+  height: 80vh;
+  background: linear-gradient(var(--text-80), var(--text-80)), no-repeat url(./assets/images/banner.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+#rooms-banner {
+  background: linear-gradient(var(--text-80), var(--text-80)), no-repeat url(./assets/images/rooms-banner.jpg);
+  height: 40vh;
+  background-position: center;
+  background-size: cover;
+}
+
+.page-banner h1,
+.page-banner h2 {
   color: white;
+}
+
+.page-banner h1 {
+  font-size: clamp(30px, 8vw, 150px);
+}
+
+#home-banner h2 {
   font-size: clamp(24px, 2.5vw, 50px);
-  font-family: "Mulish", sans-serif;
+  font-family: var(--mulish);
+}
+
+#rooms-banner {
+  background: rgba(0, 0, 0, 0.5019607843), rgba(0, 0, 0, 0.5019607843), no-repeat url(./assets/images/banner.jpg);
+  background-position: center;
+  background-size: cover;
 }
 
 #banner-logo {
@@ -846,6 +878,19 @@ input.contact-field-input {
   font-weight: 700;
 }
 
+.regular-h2 {
+  opacity: 0.5;
+  font-weight: 400;
+  font-family: mulish;
+  font-size: clamp(30px, 3vw, 100px);
+  margin-bottom: 20px;
+}
+
+#rooms p {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
 footer {
   padding: clamp(30px, 5vw, 100px);
   border-radius: var(--border-regular);
@@ -1250,10 +1295,10 @@ small {
   }
 }
 @media screen and (max-width: 575px) {
-  #banner {
+  .banner {
     padding: 10px;
   }
-  #banner h2 {
+  #home-banner h2 {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1307,7 +1352,7 @@ small {
   body {
     padding: 0;
   }
-  #banner, #gallery-home, #infos,
+  .banner, #gallery-home, #infos,
   footer {
     border-radius: 0;
   }
