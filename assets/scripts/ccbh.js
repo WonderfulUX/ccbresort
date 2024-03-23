@@ -21,3 +21,16 @@ function toggleMenu(){
 
     }
 }
+
+window.addEventListener('scroll',()=>{
+    modifyHeaderAppearance();
+})
+window.addEventListener('load',()=>{
+    modifyHeaderAppearance();
+})
+
+function modifyHeaderAppearance(){
+    document.documentElement.scrollTop >0 ? 
+    document.querySelector('header').classList.add('header-scrolled') :
+    document.querySelector('header').classList.remove('header-scrolled')
+}
