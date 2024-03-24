@@ -87,6 +87,7 @@ img{
     --text-80: #11111180;
     --text-50: #11111150;
     --text-20: #11111120;
+    --text-10: #11111110;
     --text-08: #11111108;
     --text-00: #11111100;
     --primary: #FD2A7A;
@@ -432,7 +433,7 @@ header button{
     opacity: .7;
 }
 
-#offers h4{
+.underline-title{
     text-align: unset;
     margin-bottom: 20px;
     text-decoration: underline;
@@ -983,6 +984,30 @@ input.contact-field-input{
     border-radius: var(--border-small);
 }
 
+//INFOS PAGE
+
+.regular-h3{
+    opacity: .5;
+    font-weight: 400;
+    font-family: mulish;
+    font-size: clamp(20px, 2.5vw, 50px);
+    margin-bottom: 50px;
+}
+
+.info-block{
+    margin-bottom: 50px;
+}
+
+.info-block-paragraph{
+    margin: 20px 0;
+}
+
+#travel-information,
+#location{
+    padding-bottom: 0;
+}
+
+
 // FOOTER
 footer{
     padding: clamp(30px,5vw,100px);
@@ -1106,6 +1131,40 @@ small{
 
 .room-name-mobile{
     display: none;
+}
+
+.alpha-list{
+    list-style: lower-alpha;
+}
+.alpha-list li::marker{
+    color: var(--primary);
+    font-weight: 600;
+}
+.options-fare-table-line{
+    display: grid;
+    grid-template-columns: 200px repeat(8, 50px);
+    padding: 10px;
+    width: fit-content;
+    margin: 0 auto;
+    font-size: 14px;
+}
+
+.options-fare-table-line *{
+    line-height: 20px;
+    text-align: center;
+}
+
+.options-fares-title{
+    font-size: 20px;
+    margin-bottom: 16px;
+}
+
+.options-fares{
+    margin: 80px 0 50px;
+}
+
+.options-fare-table-head{
+    background: var(--text-10);
 }
 
 @media screen and (max-width: 1200px){
@@ -1242,7 +1301,7 @@ small{
     }
 
     .ccb-container{
-        width: 95%;
+        width: 92%;
         max-width: 700px;
     }
     .offer-block{
@@ -1485,6 +1544,10 @@ small{
     .footer-left{
         justify-content: center;
     }
+
+    .options-fare-table-line{
+        grid-template-columns: 150px repeat(8, 50px);
+    }
 }
 @media screen and (max-width: 680px){  
     .testimonies-visible{
@@ -1493,6 +1556,21 @@ small{
     .testimony-box{
         width: 480px;
         height: 350px;
+    }
+    .options-fare-table-line {
+        grid-template-columns: unset;
+        grid-template-rows: 60px repeat(8, 40px);
+        margin: 0;
+    }
+    .options-fares-table{
+        display: flex;
+        justify-content: center;
+    }
+    .options-fare-table-line-label{
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 }  
 @media screen and (max-width: 650px){    
