@@ -299,6 +299,17 @@ header button {
   padding: 20px;
 }
 
+.h1-left {
+  filter: drop-shadow(0 4px 30px rgba(0, 0, 0, 0.3137254902));
+  text-shadow: -1px -1px 0px white, 1px -1px 0px white, -1px 1px 0px white, 1px 1px 0px white;
+}
+
+.h1-right {
+  color: var(--primary);
+  text-shadow: -1px -1px 0px white, 1px -1px 0px white, -1px 1px 0px white, 1px 1px 0px white;
+  filter: drop-shadow(0 0 20px #FFFFFF);
+}
+
 #home-banner {
   height: 80vh;
   background: linear-gradient(var(--text-80), var(--text-80)), no-repeat url(./assets/images/banner.jpg);
@@ -313,13 +324,30 @@ header button {
   background-size: cover;
 }
 
+#home-banner .h1-left {
+  position: relative;
+}
+
+#home-banner .h1-left::before {
+  position: absolute;
+  content: "";
+  display: block;
+  top: 50%;
+  left: 0;
+  transform: translate(-120%, -50%);
+  height: 50%;
+  width: 5vw;
+  background: no-repeat url("./assets/icons/coconut-tree.svg");
+  background-size: contain;
+}
+
 .page-banner h1,
 .page-banner h2 {
   color: white;
 }
 
 .page-banner h1 {
-  font-size: clamp(30px, 8vw, 150px);
+  font-size: clamp(50px, 9vw, 150px);
 }
 
 #home-banner h2 {
@@ -1298,6 +1326,16 @@ small {
   .banner {
     padding: 10px;
   }
+  #home-banner h1 {
+    display: grid;
+    grid-template-rows: repeat(2, 13vw);
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: clamp(50px, 12vw, 150px);
+  }
+  #home-banner .h1-left::before {
+    width: 7.5vw;
+  }
   #home-banner h2 {
     display: flex;
     flex-direction: column;
@@ -1352,7 +1390,7 @@ small {
   body {
     padding: 0;
   }
-  .banner, #gallery-home, #infos,
+  .page-banner, #gallery-home, #infos,
   footer {
     border-radius: 0;
   }
