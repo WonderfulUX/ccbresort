@@ -13,13 +13,17 @@ function changeLanguage(){
         document.getElementById('language-modal').querySelector('.modal-content').classList.add('displayed');
     },300)
 }
-function switchTo(ele){
+function triggerSwitchTo(ele){
     if(!(ele.closest('li').classList.contains('active'))){
         document.querySelector("#language-modal .active").classList.remove('active');
         ele.closest('li').classList.add('active');
     }
     let languageShort = ele.querySelector('.language-label').innerText;
-    switch (languageShort){
+    switchTo(languageShort);
+    document.querySelector('#language-modal .close').click();
+}
+function switchTo(lang){
+    switch (lang){
         case 'Français':
             [... document.querySelectorAll('.fr')].map(ele=>ele.classList.remove('dn'));
             [... document.querySelectorAll('.en')].map(ele=>ele.classList.add('dn'));
@@ -55,8 +59,25 @@ closeBtns.forEach((ele)=>{
 
 window.addEventListener('load',()=>{
     let lang = localStorage.getItem('lang');
-
-    console.log(lang);
     document.querySelector(`#language-modal ul .${lang}`).closest('li').classList.add('active');
-
+    if(lang === 'french'){
+        document.querySelectorAll('#language .fr').forEach(element=>{
+            element.classList.remove('dn');
+        })
+        document.querySelectorAll('#language .en').forEach(element=>{
+            element.classList.add('dn');
+        })
+        switchTo('Français');
+    } else{
+        document.querySelectorAll('#language .en').forEach(element=>{
+            element.classList.remove('dn');
+            console.log(element);
+        })
+        document.querySelectorAll('#language .fr').forEach(element=>{
+            element.classList.add('dn');
+            console.log(element);
+        })
+        switchTo('English');
+    }
+    document.getElementById('language').classList.remove('dn');
 })
