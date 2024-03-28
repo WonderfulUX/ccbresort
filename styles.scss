@@ -1040,6 +1040,7 @@ footer,
 
 .footer-socials{
     display: flex;
+    column-gap: 4px;
 }
 .footer-social{
     width: 40px;
@@ -1307,6 +1308,16 @@ small{
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.footer-social-icon{
+    fill: var(--text);
+    border-radius: 50%;
+    transition: fill 0s linear;
+}
+.footer-social-icon:hover{
+    fill: white;
+    background: var(--primary);
 }
 
 @media screen and (max-width: 1200px){
