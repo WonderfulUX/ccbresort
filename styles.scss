@@ -440,6 +440,7 @@ header button{
     margin-bottom: 20px;
     text-decoration: underline;
     text-underline-offset: 2px;
+    font-size: 1.2em;
 }
 .offer-block .conversion-btn,
 .home-package-incentive{
@@ -1318,6 +1319,10 @@ small{
 .footer-social-icon:hover{
     fill: white;
     background: var(--primary);
+}
+
+.info-block-paragraph strong{
+    font-size: 1.2em;
 }
 
 @media screen and (max-width: 1200px){
