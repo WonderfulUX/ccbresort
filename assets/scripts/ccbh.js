@@ -34,3 +34,14 @@ function modifyHeaderAppearance(){
     document.querySelector('header').classList.add('header-scrolled') :
     document.querySelector('header').classList.remove('header-scrolled')
 }
+
+document.querySelectorAll('.other-room-pic').forEach(img =>{
+    img.addEventListener('click',(e)=>{
+        if(! e.target.closest('.selected')){
+            let src = e.target.getAttribute('src');
+            e.target.closest('.rooms-list-item-left').querySelector('.selected').classList.remove('selected');
+            e.target.closest('.rooms-list-item-left').querySelector('.room-img-main-pic').setAttribute('src',src)
+            e.target.closest('.room-other-imgs-list-item').classList.add('selected')
+        }
+    })
+})

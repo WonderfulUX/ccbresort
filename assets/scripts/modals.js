@@ -71,11 +71,9 @@ window.addEventListener('load',()=>{
     } else{
         document.querySelectorAll('#language .en').forEach(element=>{
             element.classList.remove('dn');
-            console.log(element);
         })
         document.querySelectorAll('#language .fr').forEach(element=>{
             element.classList.add('dn');
-            console.log(element);
         })
         switchTo('English');
     }

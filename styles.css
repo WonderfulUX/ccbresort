@@ -1002,10 +1002,6 @@ input.contact-field-input {
   margin-bottom: 30px;
 }
 
-.rooms-list-item-right {
-  margin-bottom: 80px;
-}
-
 .rooms-list-item-right .conversion-btn {
   margin-left: auto;
 }
@@ -1150,6 +1146,7 @@ small {
   grid-template-columns: 450px 1fr;
   -moz-column-gap: 30px;
        column-gap: 30px;
+  margin-bottom: 120px;
 }
 
 .room-img-main-pic,
@@ -1173,6 +1170,11 @@ small {
 .room-other-imgs-list-item {
   width: 100%;
   aspect-ratio: 1;
+  cursor: pointer;
+}
+
+.room-other-imgs-list-item.selected img {
+  border: 5px solid var(--primary);
 }
 
 .room-name,
@@ -1886,7 +1888,7 @@ small {
     width: 200px;
     height: 200px;
   }
-  .rooms-list-item-right {
-    margin-bottom: 50px;
+  .rooms-list-item {
+    margin-bottom: 80px;
   }
 }/*# sourceMappingURL=styles.css.map */
